@@ -77,7 +77,7 @@ session_start();
 //code for auto posting winners=====================
 $c_time = date('h:i');
 //if($c_time == 08:00)
-if($c_time == 08:00 || $c_time == 08:01){
+if($c_time == '08:00' || $c_time == '08:01'){
 	
 	$qry = "SELECT myguests.*,posts.*,lottery_name.* FROM myguests 
                             LEFT JOIN posts ON myguests.id = posts.author 

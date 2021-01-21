@@ -8,29 +8,30 @@ function randomNumber() {
   random = random1.toString() + random2.toString();
 }
 
-$(".btn-spin").click(function() {
-  randomNumber();
-  $(".value11").removeClass("d-flex");
+$(".btn-spin").click(function () {
+    randomNumber();
+    $(".value11").removeClass("d-flex");
 
-  $(".img-spin").addClass("spin-animation");
+    $(".img-spin").addClass("spin-animation");
 
-  $(".btn-spin").prop('disabled', true);
-  setTimeout(function(){
-    $(".value11").addClass("d-flex").text(random);
-      
-    $(".img-spin").removeClass("spin-animation");
-    $(".btn-spin").prop('disabled', false);
-    
-	
-  }, 7000);
-    var u_id = $("#u_id").val();
-      console.log(u_id);
+    $(".btn-spin").prop('disabled', true);
+    setTimeout(function () {
+        $(".value11").addClass("d-flex").text(random);
+
+        $(".img-spin").removeClass("spin-animation");
+        $(".btn-spin").prop('disabled', false);
+     }, 7000);
+    var u_id = $(".u_id").val();
+    console.log(u_id);
+    console.log(random);
     $.ajax({
-		type:'post',
-		data:{"u_id": u_id , "number":random },
-		url:'insert.php',
-		success:function(response){
-			alert(response);
-		}
-	});
+      url: "insert.php",
+      type: 'post',
+      dataType: 'json',
+      data: { "u_id": u_id, "number": random },
+      success: function (result) {
+        console.log(result);
+      }
+  });
+  
 });
