@@ -666,7 +666,7 @@ function myFunction() {
 				<div class="my-card">
 					<div class="card-head">
 						<h4><?php
-							$unamel = "Select username  from myguests where id ='" . $row['author'] . "'";
+						/*	$unamel = "Select username  from myguests where id ='" . $row['author'] . "'";
 							//echo $unamel;die;
 							$res_sqlq = mysqli_query($db, $unamel) or die(mysqli_error($db));
 							$po = $res_sqlq->fetch_assoc();
@@ -678,7 +678,7 @@ function myFunction() {
 							$data = $res_sql->fetch_assoc();
 							echo $data['username'];
 							echo $row['admin_name'];
-							echo $row['fullname']; ?></h4>
+							echo $row['fullname']; */ ?></h4>
 						<h5><?php echo $date;
 							echo "\n" . $time; ?></h5>
 					</div>
