@@ -477,9 +477,16 @@ if(isset($_SESSION['id'])){
 
 </div>
 <br>
-<div id="comment" class="container div-res" ></div>
+<!-- <div id="comment" class="container div-res" ></div> -->
+<div id="myModal" class="modal">
+<div class="modal-content">
+    <span class="close" >&times;</span>
+	<p id="comment"></p>
+  </div>
+</div>
 <div><input type="button" value="SUBMIT" style="float:left;"  id='spin' class="btn btn-light btn-spin">
 </div>
+
 <?php 
 }else{
 	header("Location: login.php");

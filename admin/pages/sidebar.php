@@ -131,6 +131,22 @@
 
                      </li>
 
+                     <!-- spinner -->
+                     <li class="nav-item">
+                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-file"></i> Spinner </a>
+                         <div id="submenu-8" class="collapse submenu" >
+                             <ul class="nav flex-column">
+                                 <li class="nav-item">
+                                     <a class="nav-link" href="./spin_schedule.php">Schedule Spin</a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link" href="./spin_manage.php">Manage Spin</a>
+                                 </li>
+                                 
+                             </ul>
+                         </div>
+                     </li>
+
                  </ul>
              </div>
          </nav>

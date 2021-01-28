@@ -11,7 +11,7 @@ $row['admin_id']=$_SESSION['admin_id'];
 //code for auto posting winners=====================
 $c_time = date('h:i');
 //if($c_time == 08:00)
-if($c_time == 08:00 || $c_time == 08:01){
+if($c_time == '08:00' ){
 	
 	$qry = "SELECT myguests.*,posts.*,lottery_name.* FROM myguests 
                             LEFT JOIN posts ON myguests.id = posts.author 
@@ -368,7 +368,15 @@ if( isset($_POST['delete_post']) ){
                 
                 </div>
             </div>
-			
+
+    
+        </div>
+            
+    </div>
+    <!-- ============================================================== -->
+    <!-- end wrapper  -->
+
+<!-- /Content Section -->		
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -381,13 +389,6 @@ if( isset($_POST['delete_post']) ){
             <!-- End Forums Start -->
             <!-- ============================================================== -->
 
-        </div>
-            
-    </div>
-    <!-- ============================================================== -->
-    <!-- end wrapper  -->
-
-<!-- /Content Section -->
 
 
 <!-- footer -->
