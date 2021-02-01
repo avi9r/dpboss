@@ -120,7 +120,7 @@ $row['admin_id']=$_SESSION['admin_id'];
 
                                         <tbody>
                                         	 <!-- output data of each row -->
-    					<?php 
+    					                        <?php 
 					
 						while($row = $res->fetch_assoc()) { 
 						//(isset({
