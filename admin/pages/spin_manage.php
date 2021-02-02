@@ -161,22 +161,22 @@ if (isset($_SESSION['admin_id'])) {
                 console.log(res);
                 let table_data = "";
                 for (var i = 0; i < res.length; i++) {
-                    if (res[i][5] == null) {
+                    if (res[i].lucky_num == null) {
                         table_data += '<tr>' +
-                            '<td>' + res[i][2] + '</td>' +
-                            '<td>' + res[i][3] + '</td>' +
-                            '<td><input type="number" id="luck_num' + res[i][0] + '" name="luck_num" ></td>' +
-                            '<td> <button class="btn-primary" id="save_num' + res[i][0] + '" name="save_num" onclick="savenum(' + res[i][0] + ',' + res[i][1] + ')">Save Lucky Number</button>' +
-                            '<button class="btn-danger" id="del" name="del" onclick="delthis(' + res[i][0] + ')" style="display: none;">Delete</button>' +
+                            '<td>' + res[i].date  + '</td>' +
+                            '<td>' + res[i].time + '</td>' +
+                            '<td><input type="number" id="luck_num' + res[i].id + '" name="luck_num" ></td>' +
+                            '<td> <button class="btn-primary" id="save_num' + res[i].id + '" name="save_num" onclick="savenum(' + res[i].id + ',' + res[i].schedule_id + ')">Save Lucky Number</button>' +
+                            '<button class="btn-danger" id="del" name="del" onclick="delthis(' + res[i].id + ')" style="display: none;">Delete</button>' +
                             '</td>' +
                             '</tr>';
 
-                    } else if (res[i][5] != null) {
+                    } else if (res[i].lucky_num != null) {
                         table_data += '<tr>' +
-                            '<td>' + res[i][2] + '</td>' +
-                            '<td>' + res[i][3] + '</td>' +
-                            '<td>' + res[i][5] + '</td>' +
-                            '<td> <button class="btn-danger" id="edit" name="edit" onclick="deletenum(' + res[i][0] + ',' + res[i][1] + ')">Delete Lucky Number</button>' +
+                            '<td>' + res[i].date + '</td>' +
+                            '<td>' + res[i].time + '</td>' +
+                            '<td>' + res[i].lucky_num + '</td>' +
+                            '<td> <button class="btn-danger" id="edit" name="edit" onclick="deletenum(' + res[i].id + ',' + res[i].schedule_id + ')">Delete Lucky Number</button>' +
                             '<button class="btn-danger" id="del" name="del" onclick="" style="display: none;">Delete</button>' +
                             '</td>' +
                             '</tr>';
