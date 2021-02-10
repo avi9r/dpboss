@@ -65,7 +65,7 @@ if (isset($_SESSION['admin_id'])) {
                                 <tbody>
                                     <!-- output data of each row -->
                                     <?php
-                                    $qry = "SELECT * FROM `spin_schedule`";
+                                    $qry = "SELECT * FROM `spin_schedule` ORDER bY id DESC";
                                     $res =  mysqli_query($db, $qry) or die(mysqli_error($db));
                                     while ($row = $res->fetch_assoc()) {
 
@@ -165,7 +165,7 @@ if (isset($_SESSION['admin_id'])) {
                         table_data += '<tr>' +
                             '<td>' + res[i].date  + '</td>' +
                             '<td>' + res[i].time + '</td>' +
-                            '<td><input type="number" id="luck_num' + res[i].id + '" name="luck_num" ></td>' +
+                            '<td><input type="number" onchange="check_num(' + res[i].id + ')" min="00" max="99" id="luck_num' + res[i].id + '" name="luck_num" ></td>' +
                             '<td> <button class="btn-primary" id="save_num' + res[i].id + '" name="save_num" onclick="savenum(' + res[i].id + ',' + res[i].schedule_id + ')">Save Lucky Number</button>' +
                             '<button class="btn-danger" id="del" name="del" onclick="delthis(' + res[i].id + ')" style="display: none;">Delete</button>' +
                             '</td>' +
@@ -189,6 +189,14 @@ if (isset($_SESSION['admin_id'])) {
         $('.spinner-div').hide();
         $('.spin-manage').show();
 
+    }
+    
+    function check_num(id){
+       var x = '#luck_num' + id;
+        if($(x).val() > 99 || $(x).val() < 0){
+            alert("Please enter number between 00 and 99..!");
+            $(x).val('');
+        }
     }
 
     function savenum(s_id, sch_id) {
@@ -258,8 +266,7 @@ if (isset($_SESSION['admin_id'])) {
 
     $('#back').click(function() {
 
-        // $('.spin-manage').hide();
-        // $('.spinner-div').show();
+        location.reload(true);
 
     });
 </script>

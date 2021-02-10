@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Document</title>
+<title>Spinner</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- jQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
@@ -15,17 +15,22 @@
 <?php
 session_start();
 require_once('../connect.php');
+date_default_timezone_set('Asia/Kolkata');
 if(isset($_SESSION['id'])){
+
 	
 ?>
 
 <div class="spinner-div">
 	<div class="div-img">
-		<img src="my-spin2.png" alt="" class="img-spin">
+		<img src="my-spin2.png" alt="" class="img-spin" id="spinner-img" onclick="spin_spin()">
 		<p href="#" class="value11">54</p>
 	</div>
 	<input type="hidden" class="u_id" value="<?php echo $_SESSION['id']; ?>">
 	<div class="dot"></div>
+</div>
+<div class="div-res">
+	<h4 class="show-result"></h4>
 </div>
 
 
@@ -480,7 +485,7 @@ if(isset($_SESSION['id'])){
 <!-- <div id="comment" class="container div-res" ></div> -->
 <div id="myModal" class="modal">
 <div class="modal-content">
-    <span class="close" >&times;</span>
+    <span class="close" onClick="window.location.reload();" >&times;</span>
 	<p id="comment"></p>
   </div>
 </div>
